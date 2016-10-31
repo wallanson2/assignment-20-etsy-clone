@@ -20,7 +20,7 @@ app.set('view engine', 'html');
 
 // CONFIGURING STATIC FILES  (js, css, images)
 // ------------------------------
-// js, css, and imafiles from dist/assets/
+// js, css, and imafiles from
 app.use( express.static( __dirname + '/public') );
 
 //handle GET requests to `/` (root)
