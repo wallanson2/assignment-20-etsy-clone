@@ -59,20 +59,23 @@ a{
 }
 
 #menu {
+	position: relative;
 	// border: 1px solid #E1E3DF;
 	 span{
 		font-size: 1.5em;
 		font-family: 'Trebuchet MS', sans-serif;
-		margin-left: 40px;
+		margin-left: 80px;
 		margin-right: 10px;
 		color: #000;
 	}
 }
-
-#search {
-	width: 150px;
+.firstLink {
+	margin-left: 100px;
+}
+.search-bar {
+	width: 300px;
 	height: 30px;
-	margin-left: 20px;
+	margin-left: 550px;
 }
 //
 img {

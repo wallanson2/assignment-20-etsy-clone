@@ -27,10 +27,8 @@ var DetailModel = Backbone.Model.extend({
 	}
 })
 
-
 var ListCollection = Backbone.Collection.extend({
 	Model:DetailModel,
-	// url: '',
 	parse: function(rawJSONRes){
 		// console.log('rawww', rawJSONRes.results)
 		return rawJSONRes.results
@@ -39,7 +37,6 @@ var ListCollection = Backbone.Collection.extend({
 		let paramStr = ''
 		for (var key in paramObj) {paramStr += `&${key}=${paramObj[key]}`}
 		// console.log(myKey + paramStr)
-
 		this.url = `https://openapi.etsy.com/v2/listings/active.js?limit=24&callback=?&api_key=` + myKey + paramStr
 	}
 })
@@ -51,20 +48,14 @@ var NavCollection = Backbone.Collection.extend({
 		// console.log('rawww', rawJSONRes.results)
 		return rawJSONRes.results
 	},
-	initialize: function(paramObj={}, keyword){
-		var keyWordStr = `&keyword=${paramObj}`
+	initialize: function(paramObj={}){
+		console.log('paramObj', paramObj)
 		let paramStr = ''
-		for (var key in paramObj){paramStr += `&${key}=${paramObj[key]}&keyword=${keyword}`}
 		// console.log(myKey + paramStr)
-		// console.log(`https://openapi.etsy.com/v2/listings/${listingsId}.js?callback=?&api_key=${mykey}${paramStr}`)
-		this.url = `https://openapi.etsy.com/v2/listings/active.js?limit=24&callback=?&api_key=` + myKey + `&keywords=${keyword}`
+		// console.log(`https://openapi.etsy.com/v2/listings/active.js?limit=24&keyword=${paramObj}&callback=?&api_key=` + myKey)
+		this.url = `https://openapi.etsy.com/v2/listings/active.js?includes=Images,Shop&keywords=${paramObj}&limit=24&callback=?&api_key=` + myKey //+ paramStr
 	}
 })
-	// initialize: function(){
-	// 	url: 'https://openapi.etsy.com/v2/listings/active.js'
-		// return rawJSONRes.results
-	// }
-	// return rawJSONRes.results
-// })
+
 
 module.exports = {DetailModel:DetailModel, ListCollection:ListCollection, NavCollection:NavCollection}
