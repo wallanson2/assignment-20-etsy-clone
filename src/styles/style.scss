@@ -96,6 +96,7 @@ img:hover {
 .container {
 	flex-direction: row;
 	width: 65%;
+	margin-bottom: 30px;
 }
 #list-holder{
 
@@ -171,13 +172,13 @@ img:hover {
 	text-align: justify;
 	max-width: 100%;
 	margin-bottom: 75px;
-	padding: 20px 100px 0 100px;
+	padding-top: 20px;
 	letter-spacing: 1px;
 }
 
 
 .arrow {
-	margin: 2em;
+	margin: -300px 2em 2em 2em;
 	background-color: rgba(17, 17, 17, 0.6);
 	color: snow;
 	font-size: 2em;
